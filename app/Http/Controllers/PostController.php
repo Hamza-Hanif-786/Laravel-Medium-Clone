@@ -13,11 +13,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::get();
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10)->withQueryString();
 
         //dump($categories);                             // For debugging purpose -> to see the data in the console
 
         return view('dashboard', [
+            'posts' => $posts,
             'categories' => $categories,
         ]);
     }
