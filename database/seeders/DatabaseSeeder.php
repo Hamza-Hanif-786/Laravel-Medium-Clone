@@ -30,5 +30,10 @@ class DatabaseSeeder extends Seeder
         }
 
         Post::factory(100)->create();
+
+        // $this->call([                     // Example of calling another seeder
+        //     PostSeeder::class
+        // ]);
+        // php artisan db:seed --class=PostSeeder
     }
 }

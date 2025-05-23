@@ -12,6 +12,6 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Just an example of a seeder
     }
 }
