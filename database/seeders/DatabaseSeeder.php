@@ -24,9 +24,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            Category::create([
-                'name' => $category
-            ]);
+            Category::create(['name' => $category]);
         }
 
         Post::factory(100)->create();
