@@ -15,14 +15,6 @@
                     <h2 class="text-3xl font-bold">Latest Posts</h2>
                 </div>
 
-                {{-- Search Bar --}}
-
-                <div class="p-4">
-                    <form action="{{ route('dashboard') }}" method="GET" class="flex items-center">
-                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search posts..." class="border border-gray-300 rounded-lg p-2 w-full sm:w-80" required>
-                        <x-primary-button type="submit" class="ml-2 py-2.5 cursor-pointer">Search</x-primary-button>
-                    </form>
-                </div>
             </div>
 
             <div class="mt-8">

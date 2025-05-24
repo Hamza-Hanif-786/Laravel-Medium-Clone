@@ -2,12 +2,21 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex items-center">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="w-32 fill-current text-gray-800 dark:text-gray-200" />
                     </a>
+                </div>
+
+                {{-- Search Bar --}}
+
+                <div class="p-4">
+                    <form action="{{ route('dashboard') }}" method="GET" class="flex items-center">
+                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search posts..." class="border border-gray-300 rounded-lg p-2 w-full" required>
+                        <x-primary-button type="submit" class="ml-2 py-2.5 cursor-pointer">Search</x-primary-button>
+                    </form>
                 </div>
             </div>
 
