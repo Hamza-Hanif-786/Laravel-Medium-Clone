@@ -13,13 +13,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $categories = Category::get();
-
         $search = request()->input('search');
 
         $posts = Post::when($search, function ($query, $search) {
-            return $query->where('title', 'like', "%{$search}%");
-                // ->orWhere('content', 'like', "%{$search}%");
+            return $query->where('title', 'like', "%{$search}%")
+                    ->orWhere('content', 'like', "%{$search}%");
         })
         ->orderBy('created_at', 'desc')
         ->paginate(10)
@@ -32,7 +30,6 @@ class PostController extends Controller
         
         return view('dashboard', [
             'posts' => $posts,
-            'categories' => $categories,
         ]);
     }
 
