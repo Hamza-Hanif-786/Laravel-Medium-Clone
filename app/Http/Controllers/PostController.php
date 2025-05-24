@@ -28,7 +28,7 @@ class PostController extends Controller
         //dump($categories);                             // For debugging purpose -> to see the data in the console
 
         
-        return view('dashboard', [
+        return view('post.index', [
             'posts' => $posts,
         ]);
     }
