@@ -12,7 +12,7 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:justify-between">
-                <a href="{{ route('post.create') }}" class="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400">
+                <a href="{{ route('post.create') }}" class="text-gray-800 cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400">
                     <x-primary-button>
                         {{ 'Create Post' }}
                     </x-primary-button>
