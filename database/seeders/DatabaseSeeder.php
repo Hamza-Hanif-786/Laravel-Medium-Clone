@@ -14,20 +14,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $categories = [
-        //     'Technology',
-        //     'Health',
-        //     'Science',
-        //     'Sports',
-        //     'Politics',
-        //     'Entertainment',
-        // ];
+        $categories = [
+            'Technology',
+            'Health',
+            'Science',
+            'Sports',
+            'Politics',
+            'Entertainment',
+        ];
 
-        // foreach ($categories as $category) {
-        //     Category::create(['name' => $category]);
-        // }
+        foreach ($categories as $category) {
+            Category::create(['name' => $category]);
+        }
 
-        // Post::factory(100)->create();
+        Post::factory(100)->create();
 
         // $this->call([                     // Example of calling another seeder
         //     PostSeeder::class
