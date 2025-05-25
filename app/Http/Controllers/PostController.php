@@ -57,6 +57,8 @@ class PostController extends Controller
 
         $image = $data['image'];
         $imagePath = $image->store('posts', 'public');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $image->storeAs('posts', $imageName, 'public');
         $data['image'] = $imagePath;
         unset($image);
         
