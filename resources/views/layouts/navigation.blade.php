@@ -9,15 +9,6 @@
                         <x-application-logo class="w-32 fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
-
-                {{-- Search Bar --}}
-
-                <div class="p-4">
-                    <form action="{{ route('dashboard') }}" method="GET" class="flex items-center">
-                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search posts..." class="border border-gray-300 rounded-lg p-2 w-full" required>
-                        <x-primary-button type="submit" class="ml-2 py-2.5 cursor-pointer">Search</x-primary-button>
-                    </form>
-                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:justify-between">
@@ -60,17 +51,28 @@
                     </x-slot>
                 </x-dropdown>
                 </div>
-
             </div>
 
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-hidden focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+            <div class="flex items-center sm:hidden gap-1">
+                <div class="flex items-center sm:hidden">
+                    <a href="{{ route('post.create') }}" class="text-gray-800 cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400">
+                        <x-primary-button class="flex items-center p-1!">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </x-primary-button>
+                    </a>
+                </div>
+
+                <!-- Hamburger -->
+                <div class="-me-2 flex items-center sm:hidden">
+                    <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-hidden focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
