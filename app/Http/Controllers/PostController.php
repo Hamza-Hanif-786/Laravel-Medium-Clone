@@ -25,11 +25,6 @@ class PostController extends Controller
         ->paginate(10)
         ->withQueryString();
 
-
-
-        //dump($categories);                             // For debugging purpose -> to see the data in the console
-
-        
         return view('post.index', [
             'posts' => $posts,
         ]);
