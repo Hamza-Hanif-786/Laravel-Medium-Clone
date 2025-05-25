@@ -12,7 +12,15 @@
         
             <div class="mt-8 flex flex-col sm:flex-row items-center justify-between">
                 <div class="p-4 text-gray-900 dark:text-gray-100">
-                    <h2 class="text-3xl font-bold">Latest Posts</h2>
+                    <h2 class="text-3xl font-bold text-left">Latest Posts</h2>
+                </div>
+
+                {{-- Search Bar --}}
+
+                <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+                    <form action="{{ route('dashboard') }}" method="GET" class="flex items-center">
+                        <input type="search" name="search" value="{{ request('search') }}" placeholder="Search posts..." class="border border-gray-300 rounded-lg p-2 w-full" required>
+                    </form>
                 </div>
 
             </div>
