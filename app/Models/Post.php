@@ -23,4 +23,14 @@ class Post extends Model
         return $this->belongsTo(User::class);
     
     }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function readTime($wordsPerMinute = 100) {
+        $words = str_word_count(strip_tags($this->content));
+        $minutes = ceil($words / $wordsPerMinute);                       
+        return max(1,$minutes);
+    }
 }
