@@ -51,7 +51,8 @@ class PostController extends Controller
         $data = $request->validated();
 
         $image = $data['image'];
-        $imageName = time() . '_' . Auth::user()->username . '.' . $image->getClientOriginalExtension();
+        $safeName = preg_replace('/[^\w\-\.\@]/', '_', $image->getClientOriginalName());
+        $imageName = time() . '_'  . $safeName;
         $imagePath = $image->storeAs('posts', $imageName, 'public');
         $data['image'] = $imagePath;
         unset($image);
