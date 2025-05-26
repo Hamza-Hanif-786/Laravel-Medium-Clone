@@ -1,8 +1,8 @@
 <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-    <img class="rounded-t-lg w-full h-48 object-cover aspect-video" src={{ Storage::url($post->image) ?? "https://flowbite.com/docs/images/blog/image-1.jpg" }} alt="" />
+    <img class="rounded-t-lg w-full h-48 object-cover aspect-video" src={{ Storage::url($post->image) }} alt="" />
     <div class="p-5">
         <div>
-            <a href="#">
+            <a href="{{ route('post.show', $post->slug) }}" class="inline-flex items-center mb-2 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
             </a>
             <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -10,7 +10,7 @@
             </div>
         </div>    
         <div class="flex items-center justify-between mb-3 w-full">
-            <a href="#">
+            <a href="{{ route('post.show', $post->slug) }}">
                 <x-primary-button>
                     Read more
                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
