@@ -5,7 +5,7 @@
                 <h1 class="text-5xl mb-4 font-black">{{ $post->title }}</h1>
 
                 {{-- User Avatar Section --}}
-                <div class="flex items-center mb-4 gap-2">
+                <div class="flex items-center mb-4 gap-4">
                     <x-user-avatar :user="$post->user" />
                     <div>
                         <div class="flex gap-2">
