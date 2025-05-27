@@ -7,15 +7,17 @@
                 {{-- User Avatar Section --}}
                 <div class="flex items-center mb-4 gap-2">
                     @if ($post->user->image)
-                        <img src="{{ Storage::url($post->user->image) }}" alt="{{ $post->user->name }}" class="size-14 rounded-full mr-2">
+                        <img src="{{ $post->user->imageUrl() }}" alt="{{ $post->user->name }}" class="size-14 rounded-full mr-2">
                     @else
                         <img src="{{ asset('default_avatar.png') }}" alt="{{ $post->user->name }}" class="size-14 rounded-full mr-2">
                     @endif
                     <div>
                         <div class="flex gap-2">
-                            <h3>{{ $post->user->name }}</h3>
+                            <a href="{{ route('profile.show', $post->user) }}" class="hover:underline text-gray-800">
+                                {{ $post->user->name }}
+                            </a>
                             &middot;
-                            <a href="#" class="text-emerald-600">Follow</a>
+                            <a href="#" class="text-emerald-600 hover:underline">Follow</a>
                         </div>
                         <div class="flex gap-2 text-gray-600 dark:text-gray-400">
                             {{ $post->readTime() }} min read
