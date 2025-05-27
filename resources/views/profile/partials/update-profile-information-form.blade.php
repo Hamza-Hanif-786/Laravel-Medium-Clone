@@ -21,7 +21,7 @@
         {{-- Profile Photo --}}
         @if ($user->image)
             <div class="mb-4">
-                <img src="{{ Storage::url($user->image) }}" alt="User Avatar" class="size-28 rounded-full object-cover">
+                <img src="{{ $user->imageUrl()}}" alt="User Avatar" class="size-28 rounded-full object-cover">
             </div>
         @else
             <div class="mb-4">
