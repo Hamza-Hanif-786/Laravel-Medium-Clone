@@ -6,11 +6,7 @@
 
                 {{-- User Avatar Section --}}
                 <div class="flex items-center mb-4 gap-2">
-                    @if ($post->user->image)
-                        <img src="{{ $post->user->imageUrl() }}" alt="{{ $post->user->name }}" class="size-14 rounded-full mr-2">
-                    @else
-                        <img src="{{ asset('default_avatar.png') }}" alt="{{ $post->user->name }}" class="size-14 rounded-full mr-2">
-                    @endif
+                    <x-user-avatar :user="$post->user" />
                     <div>
                         <div class="flex gap-2">
                             <a href="{{ route('profile.show', $post->user) }}" class="hover:underline text-gray-800">
