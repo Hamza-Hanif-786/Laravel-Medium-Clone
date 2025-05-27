@@ -1,5 +1,5 @@
 <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-    <img class="rounded-t-lg w-full h-48 object-cover aspect-video" src={{ Storage::url($post->image) }} alt="" />
+    <img class="rounded-t-lg w-full h-auto object-cover aspect-video" src={{ Storage::url($post->image) }} alt="" />
     <div class="p-5">
         <div>
             <a href="{{ route('post.show', [
