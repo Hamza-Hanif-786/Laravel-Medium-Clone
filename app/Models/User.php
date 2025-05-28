@@ -66,6 +66,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id');
     }
 
+    public function isFollowedBy(User $user)
+    {
+        return $this->followers()->where('follower_id', $user->id) ->exists();
+    }
+
     public function imageUrl()
     {
         if ($this->image) {
