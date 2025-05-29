@@ -15,8 +15,7 @@
                             @endforelse
                         </div>
                     </div>
-                    <div class="w-[25%] border-l pl-8" 
-                    x-data="{ 
+                    <div class="w-[25%] border-l pl-8" x-data="{ 
                         following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }},
                         followersCount: {{ $user->followers->count() }},
                         follow() {
